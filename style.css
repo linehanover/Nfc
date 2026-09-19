@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma, Vazir, sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: #e2e8f0;
+    min-height: 100vh;
+    padding: 16px;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+h2 { margin-bottom: 8px; font-size: 20px; }
+h3 { margin: 16px 0 8px; font-size: 16px; color: #94a3b8; }
+
+.hint {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-bottom: 16px;
+}
+
+/* تب‌ها */
+.tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #1e293b;
+    color: #94a3b8;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tab.active {
+    background: #0d6efd;
+    color: #fff;
+}
+
+/* پنل‌ها */
+.panel { display: none; }
+.panel.active { display: block; }
+
+label {
+    display: block;
+    margin: 12px 0 6px;
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    background: #1e293b;
+    color: #e2e8f0;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #0d6efd;
+}
+
+/* دکمه‌ها */
+button.primary, button.secondary {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-bottom: 8px;
+}
+
+button.primary {
+    background: #0d6efd;
+    color: #fff;
+}
+
+button.primary:disabled {
+    background: #334155;
+    cursor: not-allowed;
+}
+
+button.secondary {
+    background: #334155;
+    color: #e2e8f0;
+}
+
+/* لاگ */
+.log {
+    font-size: 13px;
+    background: #1e293b;
+    border-radius: 10px;
+    padding: 12px;
+    margin-top: 12px;
+    min-height: 40px;
+    white-space: pre-line;
+    line-height: 1.7;
+    color: #cbd5e1;
+}
+
+/* لیست */
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-item {
+    background: #1e293b;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-item .uid {
+    font-family: monospace;
+    color: #94a3b8;
+}
+
+.badge {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.badge.pending { background: #f59e0b; color: #000; }
+.badge.done { background: #10b981; color: #000; }
+
+hr {
+    border: none;
+    border-top: 1px solid #334155;
+    margin: 20px 0;
+  }
