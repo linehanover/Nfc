@@ -4,49 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0d6efd">
-    <title>سیستم شارژ کارت NFC</title>
+    <title>سیستم کارت NFC</title>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- تب‌ها -->
-    <nav class="tabs">
-        <button class="tab active" data-tab="admin">👤 ادمین</button>
-        <button class="tab" data-tab="employee">🧑‍💼 کارمند</button>
-    </nav>
+<nav class="tabs">
+    <button class="tab active" data-tab="admin">👤 ادمین</button>
+    <button class="tab" data-tab="employee">🧑‍💼 کارمند</button>
+</nav>
 
-    <!-- پنل ادمین -->
-    <section id="admin" class="panel active">
-        <h2>پنل ادمین</h2>
-        <p class="hint">مبلغ رو برای UID کارت مشخص ثبت کن</p>
+<!-- ادمین -->
+<section id="admin" class="panel active">
+    <h2>ثبت کارت جدید</h2>
 
-        <label>UID کارت</label>
-        <input id="adminUid" type="text" placeholder="مثلاً 04a2b3c4" />
+    <label>UID کارت</label>
+    <input id="adminUid" placeholder="04a2b3c4" />
 
-        <label>مبلغ (تومان)</label>
-        <input id="adminAmount" type="number" placeholder="500" />
+    <label>اسم صاحب کارت</label>
+    <input id="adminName" placeholder="علی رضایی" />
 
-        <button id="adminSend" class="primary">ارسال به Firebase</button>
-        <p id="adminLog" class="log"></p>
+    <label>شماره ملی</label>
+    <input id="adminNationalId" placeholder="0012345678" />
 
-        <hr />
+    <label>نام کارت</label>
+    <input id="adminCardName" placeholder="کارت هدیه" />
 
-        <h3>آخرین کارت‌ها</h3>
-        <div id="adminList" class="list"></div>
-    </section>
+    <label>شماره کارت</label>
+    <input id="adminCardNumber" placeholder="6037991234567890" />
 
-    <!-- پنل کارمند -->
-    <section id="employee" class="panel">
-        <h2>پنل کارمند</h2>
-        <p class="hint">کارت رو پشت گوشی بگیر تا مبلغ نوشته بشه</p>
+    <label>شماره حساب</label>
+    <input id="adminAccountNumber" placeholder="1234567890" />
 
-        <button id="empScan" class="primary">شروع اسکن</button>
-        <button id="empStop" class="secondary" disabled>توقف</button>
-        <p id="empLog" class="log"></p>
-    </section>
+    <label>شماره شبا</label>
+    <input id="adminSheba" placeholder="IR123456789012345678901234" />
 
-    <!-- Firebase SDK -->
-    <script type="module" src="app.js"></script>
+    <label>تاریخ انقضا</label>
+    <input id="adminExpiry" placeholder="1405/12" />
+
+    <label>CVV2</label>
+    <input id="adminCvv2" placeholder="123" />
+
+    <label>PIN ۴ رقمی</label>
+    <input id="adminPin" type="password" maxlength="4" placeholder="1234" />
+
+    <label>مبلغ اولیه</label>
+    <input id="adminAmount" type="number" placeholder="500" />
+
+    <button id="adminSend" class="primary">ذخیره در Firebase</button>
+    <p id="adminLog" class="log"></p>
+
+    <hr />
+    <h3>کارت‌های ثبت‌شده</h3>
+    <div id="adminList" class="list"></div>
+</section>
+
+<!-- کارمند -->
+<section id="employee" class="panel">
+    <h2>پنل کارمند</h2>
+
+    <button id="empScan" class="primary">شروع اسکن</button>
+    <button id="empStop" class="secondary" disabled>توقف</button>
+    <p id="empLog" class="log"></p>
+
+    <div id="empPinBox" style="display:none">
+        <label>PIN ۴ رقمی رو وارد کن</label>
+        <input id="empPinInput" type="password" maxlength="4" inputmode="numeric" />
+        <button id="empPinBtn" class="primary">تأیید</button>
+    </div>
+
+    <div id="empResult" class="info-box"></div>
+</section>
+
+<script type="module" src="app.js"></script>
 </body>
-</html>
+                                                            </html>
